@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import uuid from 'uuid/v4';
+import './CreatePostForm.css';
 
 class CreatePostForm extends Component {
 
@@ -18,7 +19,7 @@ class CreatePostForm extends Component {
 
     handleSubmit(evt){
         evt.preventDefault();
-        this.props.createPost({...this.state, id: uuid()});
+        this.props.createPost({...this.state, id: uuid(), upvote: false, downvote: false});
         this.setState({ titleValue: "", postValue: ""});
     }
 
@@ -29,12 +30,12 @@ class CreatePostForm extends Component {
                     <h2>Create a post</h2>
                 </div>
                 <div>
-                    <form id="postForm" onSubmit={this.handleSubmit}>
+                    <form id="postForm" onSubmit={this.state.titleValue === "" ? "" :this.handleSubmit}>
                         <input
                         type="text"
                         name="titleValue"
                         value={this.state.titleValue}
-                        placeholder="add a title"
+                        placeholder="Add a title..."
                         onChange={this.handleChange}
                         />
                         <button>POST</button>
@@ -42,9 +43,11 @@ class CreatePostForm extends Component {
                     <textarea 
                     name="postValue" 
                     form="postForm" 
-                    placeholder="text..."
+                    placeholder="Text..."
                     value={this.state.postValue}
                     onChange={this.handleChange}
+                    rows="10"
+                    cols="50"
                     />
                 </div>
             </div>

@@ -5,7 +5,6 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>React Social Media Feed</h1>
       <Feed />
     </div>
   );

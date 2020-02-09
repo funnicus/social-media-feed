@@ -1,0 +1,56 @@
+@media only screen and (min-width: 1000px) {
+    .CreatePostForm{
+        width: 800px;
+        margin: auto;
+        margin-top: 100px;
+        border: 1px solid grey;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: rgba(65, 62, 62, 0.432);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .CreatePostForm{
+        width: 80%;
+        margin: auto;
+        margin-top: 100px;
+        border: 1px solid grey;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: rgba(65, 62, 62, 0.432);
+    }
+}
+
+.CreatePostForm input{
+    width: 85%;
+    height: 30px;
+    font-family: sans-serif;
+    border-radius: 6px;
+    border: 1px solid grey;
+    background-color: #1a1a1b;
+    color: #d7dadc;
+    padding-left: 15px;
+}
+
+.CreatePostForm textarea{
+    width: 95%;
+    height: auto;
+    resize: none;
+    border: 1px solid grey;
+    margin-top: 10px;
+    font-family: sans-serif;
+    border-radius: 6px;
+    padding: 12px;
+    background-color: #1a1a1b;
+    color: #d7dadc;
+}
+
+.CreatePostForm button{
+    height: 25px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    margin-left: 10px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
