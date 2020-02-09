@@ -49,7 +49,7 @@ class Feed extends Component {
     }
 
     render(){
-        const posts = this.state.posts.map(post => {
+        const posts = this.state.posts.reverse().map(post => {
             return(
                 <Post 
                 key={post.id}

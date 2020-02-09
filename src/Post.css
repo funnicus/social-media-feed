@@ -1,25 +1,23 @@
 @media only screen and (min-width: 1000px) {
     .Post {
-        width: 800px;
+        width: 820px;
         height: fit-content;
         margin: auto;
         margin-top: 20px;
         border: 1px solid grey;
         border-radius: 6px;
-        padding: 10px;
         background-color: rgba(65, 62, 62, 0.432);
     }
 }
 
 @media only screen and (max-width: 1000px) {
     .Post {
-        width: 80%;
+        width: 82%;
         height: fit-content;
         margin: auto;
         margin-top: 20px;
         border: 1px solid grey;
         border-radius: 6px;
-        padding: 10px;
         background-color: rgba(65, 62, 62, 0.432);
     }
 }
@@ -27,13 +25,17 @@
 #post-footer{
     display: flex;
     flex-direction: row;
+    background-color: #151516;
+    border-radius: 6px;
+    width: 100%;
 }
 
 #vote-btns{
     display: flex;
     flex-direction: row;
     height: 35px;
-    margin-top: 20px;
+    margin-top: 13px;
+    margin-left: 20px;
 }
 #vote-btns button{
     margin-right: 10px;
@@ -43,6 +45,8 @@
     width: 30px;
     background: none;
     color: grey;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 #vote-btns #upVote:hover{
@@ -57,7 +61,12 @@
 
 #post-content{
     margin-bottom: 20px;
+    margin-left: 20px;
     overflow: hidden;
+}
+
+#post-title{
+    margin-left: 20px;
 }
 
 #posted-ago{
