@@ -17,6 +17,7 @@ class Feed extends Component {
                 }
             ]
         };
+        //binding this to the functions and methods that use it
         this.createPost = this.createPost.bind(this);
         this.toggleUpvote = this.toggleUpvote.bind(this);
         this.toggleDownvote = this.toggleDownvote.bind(this);
@@ -29,8 +30,10 @@ class Feed extends Component {
     }
 
     toggleUpvote(id){
+        //toggling the state to the desired post with filtering by id
         const updatedPosts = this.state.posts.map(post => {
             if (post.id === id) {
+                //setting upvote to the opposite value. downvote is set to false
                 return { ...post, upvote: !post.upvote, downvote: false };
               }
               return post;
@@ -39,8 +42,10 @@ class Feed extends Component {
     }
 
     toggleDownvote(id){
+        //toggling the state to the desired post with filtering by id
         const updatedPosts = this.state.posts.map(post => {
             if (post.id === id) {
+                //setting downvote to the opposite value. upvote is set to false
                 return { ...post, downvote: !post.downvote, upvote: false };
               }
               return post;
@@ -49,6 +54,9 @@ class Feed extends Component {
     }
 
     render(){
+        //Generating all the posts from the posts array in reverse order, 
+        //We need to go trough the array in reverse order if we want the most recent 
+        //post on the top of the feed. 
         const posts = this.state.posts.reverse().map(post => {
             return(
                 <Post 
