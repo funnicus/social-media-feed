@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Post.css';
+import './styles/Post.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 

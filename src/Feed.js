@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CreatePostForm from "./CreatePostForm";
 import Post from "./Post";
-import "./Feed.css";
+import "./styles/Feed.css";
 
 class Feed extends Component {
     constructor(props){

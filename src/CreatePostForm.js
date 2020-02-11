@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import uuid from 'uuid/v4';
-import './CreatePostForm.css';
+import './styles/CreatePostForm.css';
 
 class CreatePostForm extends Component {
 
