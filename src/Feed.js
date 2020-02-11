@@ -9,15 +9,15 @@ class Feed extends Component {
         this.state = {
             posts: [
                 {
-                    titleValue: "Hello",
-                    postValue: "This is a test post. Yeeeeeeeeeeeeee eeeeeeeeeeeee eee eee eeeee, eeeeeeeeeeeeeeeee. This is a test post. Yeeeeeeeeeeeeee eeeeeeeeeeeee eee eee eeeee, eeeeeeeeeeeeeeeee. This is a test post. Yeeeeeeeeeeeeee eeeeeeeeeeeee eee eee eeeee, eeeeeeeeeeeeeeeee. This is a test post. Yeeeeeeeeeeeeee eeeeeeeeeeeee eee eee eeeee, eeeeeeeeeeeeeeeee. This is a test post. Yeeeeeeeeeeeeee eeeeeeeeeeeee eee eee eeeee, eeeeeeeeeeeeeeeee. This is a test post. Yeeeeeeeeeeeeee eeeeeeeeeeeee eee eee eeeee, eeeeeeeeeeeeeeeee. This is a test post. Yeeeeeeeeeeeeee eeeeeeeeeeeee eee eee eeeee, eeeeeeeeeeeeeeeee.",
-                    id: 8,
+                    titleValue: "Test Post",
+                    postValue: "This is a test post.",
+                    id: 9,
                     upvote: false,
                     downvote: false
                 }
             ]
         };
-        //binding this to the functions and methods that use it
+        //binding this-keyword to the functions and methods that use it
         this.createPost = this.createPost.bind(this);
         this.toggleUpvote = this.toggleUpvote.bind(this);
         this.toggleDownvote = this.toggleDownvote.bind(this);
@@ -25,7 +25,7 @@ class Feed extends Component {
 
     createPost(newPost){
         this.setState({
-            posts: [...this.state.posts, newPost]
+            posts: [newPost, ...this.state.posts]
         });
     }
 
@@ -54,10 +54,8 @@ class Feed extends Component {
     }
 
     render(){
-        //Generating all the posts from the posts array in reverse order, 
-        //We need to go trough the array in reverse order if we want the most recent 
-        //post on the top of the feed. 
-        const posts = this.state.posts.reverse().map(post => {
+        //Generating all the posts from the posts array in state
+        const posts = this.state.posts.map(post => {
             return(
                 <Post 
                 key={post.id}

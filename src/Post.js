@@ -29,6 +29,12 @@ class Post extends Component {
         const arrowUp = <FontAwesomeIcon icon={faArrowUp}>Upvote</FontAwesomeIcon>;
         const arrowDown = <FontAwesomeIcon icon={faArrowDown}>Downvote</FontAwesomeIcon>;
 
+        //creating a seperate paragraph for each new line
+        const postParagraphs = this.props.postValue.split("\n").map(p => <p>{p}</p>);
+
+        //Posting date for the post
+        var d = new Date();
+
         return(
             <div className="Post">
                     <div id="post-title">
@@ -36,16 +42,20 @@ class Post extends Component {
                         <h2>{this.props.titleValue}</h2>
                     </div>
                     <div id="post-content">
-                        {this.props.postValue}
+                        {postParagraphs}
                     </div>
                     <div id="post-footer">
                         <div id="vote-btns">
-                            <button id="upVote" onClick={this.handleToggleUpvote}>{arrowUp}</button>
+                            <button id={this.props.upvote ? "upVoteOn" : "upVote"} onClick={this.handleToggleUpvote}>
+                                {arrowUp}
+                            </button>
                             <p>{this.state.postTotalVotes}</p>
-                            <button id="downVote" onClick={this.handleToggleDownvote}>{arrowDown}</button>
+                            <button id={this.props.downvote ? "downVoteOn" : "downVote"} onClick={this.handleToggleDownvote}>
+                                {arrowDown}
+                            </button>
                         </div>
                         <div id="posted-ago">
-                            <p>Posted 0 minutes ago.</p>
+                            <p>Posted on {d.getDate()}.{d.getMonth()+1}.{d.getFullYear()} </p>
                         </div>
                     </div>
             </div>

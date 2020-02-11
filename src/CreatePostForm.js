@@ -11,6 +11,7 @@ class CreatePostForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    //handling changing value of the title and the post content in the textarea
     handleChange(evt){
         this.setState({
             [evt.target.name]: evt.target.value
@@ -38,7 +39,7 @@ class CreatePostForm extends Component {
                         placeholder="Add a title..."
                         onChange={this.handleChange}
                         />
-                        <button>POST</button>
+                        <button className={this.state.titleValue === "" ? "disabled" : ""}>POST</button>
                     </form>
                     <textarea 
                     name="postValue" 
